@@ -2,7 +2,7 @@
   <div>
     <Header />
     <Navbar />
-    <Homepage />
+    <router-view></router-view>
     <Footer />
   </div>
 </template>

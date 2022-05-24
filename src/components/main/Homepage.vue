@@ -23,6 +23,7 @@
 <script>
 import Productcard from "../Productcard.vue";
 export default {
+  name: "Homepage",
   components: {
     Productcard,
   },
