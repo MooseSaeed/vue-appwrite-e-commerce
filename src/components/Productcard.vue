@@ -2,9 +2,9 @@
   <div>
     <!-- COMPONENT: PRODUCT CARD -->
     <article class="shadow-sm rounded bg-white border border-gray-200">
-      <a href="#" class="relative block p-1">
+      <a href="/products/example" class="relative block p-1">
         <img
-          src="images/items/10.jpg"
+          src="/images/items/10.jpg"
           class="mx-auto w-auto"
           style="height: 250px"
           height="250"
@@ -24,7 +24,7 @@
           <i class="fa fa-heart"></i>
         </a>
         <h6>
-          <a href="#" class="text-gray-600 hover:text-blue-500"
+          <a href="/products/example" class="text-gray-600 hover:text-blue-500"
             >Product title here</a
           >
         </h6>

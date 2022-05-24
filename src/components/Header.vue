@@ -5,7 +5,7 @@
         <!-- Brand -->
         <div class="flex-shrink-0 mr-5">
           <a href="#">
-            <img src="images/logo.svg" height="38" alt="Brand" />
+            <img src="/images/logo.svg" height="38" alt="Brand" />
           </a>
         </div>
         <!-- Brand .//end -->
