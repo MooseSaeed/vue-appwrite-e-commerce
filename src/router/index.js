@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from "vue-router";
 import Homepage from "../components/main/Homepage.vue";
 import Productview from "../components/main/Productview.vue";
 import Authpage from "../components/main/Authpage.vue";
+import Adminpanel from "../components/main/Adminpanel.vue";
+import Newproduct from "../components/main/Newproduct.vue";
+import Mycart from "../components/main/Mycart.vue";
 
 const routes = [
   {
@@ -18,6 +21,21 @@ const routes = [
     path: "/auth",
     name: "Authpage",
     component: Authpage,
+  },
+  {
+    path: "/admin",
+    name: "Adminpanel",
+    component: Adminpanel,
+  },
+  {
+    path: "/newproduct",
+    name: "Newproduct",
+    component: Newproduct,
+  },
+  {
+    path: "/mycart",
+    name: "Mycart",
+    component: Mycart,
   },
 ];
 

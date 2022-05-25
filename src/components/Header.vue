@@ -30,7 +30,7 @@
         <div class="flex items-center space-x-2 ml-auto">
           <a
             class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
-            href="#"
+            href="/mycart"
           >
             <i class="text-gray-400 w-5 fa fa-shopping-cart"></i>
             <span class="hidden lg:inline ml-1">My cart</span>
@@ -41,6 +41,13 @@
           >
             <i class="text-gray-400 w-5 fa fa-user"></i>
             <span class="hidden lg:inline ml-1">Sign in</span>
+          </a>
+          <a
+            class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
+            href="/admin"
+          >
+            <i class="text-gray-400 w-5 fa fa-user"></i>
+            <span class="hidden lg:inline ml-1">Admin</span>
           </a>
         </div>
         <!-- Actions .//end -->
