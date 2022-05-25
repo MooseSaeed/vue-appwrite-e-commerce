@@ -107,67 +107,6 @@
 <script>
 export default {
   name: "Signup",
-  components: {},
-  data: () => {
-    return {
-      username: "",
-      nameOfUser: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-      loading: "",
-      error: false,
-    };
-  },
-  methods: {
-    async processRegister(e) {
-      e.preventDefault();
-      // Validation
-      if (this.loading) {
-        return;
-      }
-      // Password confirmation
-      if (this.password !== this.confirmPassword) {
-        this.error = "Error: Passwords must be matching.";
-        return;
-      }
-      // Length Validation
-      if (!(this.password.length >= 6 && this.password.length <= 32)) {
-        this.error = "Error: Password must be between 6 and 32 characters.";
-        return;
-      }
-      if (this.nameOfUser.length >= 100) {
-        this.error = "Error: Name can not exceed 100 characters";
-        return;
-      }
-      if (this.username.length >= 50) {
-        this.error = "Error: username can not exceed 50 characters";
-        return;
-      }
-      this.loading = true;
-
-      //I need a username here to make dynamic users routes
-
-      let username = this.username;
-      username = username.replace(/\s+/g, "").toLowerCase();
-
-      if (
-        (await this.$parent.signup(
-          username,
-          this.nameOfUser,
-          this.password,
-          this.email
-        )) === false
-      ) {
-        this.error =
-          "Something went wrong while registering, Check console for more details.";
-      } else {
-        setTimeout(() => {
-          this.$parent.updateUsername(username);
-        }, 300);
-      }
-    },
-  },
 };
 </script>
 
