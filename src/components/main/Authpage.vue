@@ -32,6 +32,7 @@
 <script>
 import Login from "../Login.vue";
 import Signup from "../Signup.vue";
+import appwrite from "../../utils";
 export default {
   name: "Authpage",
   components: {
