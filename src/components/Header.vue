@@ -29,6 +29,7 @@
         <!-- Actions -->
         <div class="flex items-center space-x-2 ml-auto">
           <a
+            v-if="store.userprofile"
             class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
             href="/mycart"
           >
@@ -36,6 +37,7 @@
             <span class="hidden lg:inline ml-1">My cart</span>
           </a>
           <a
+            v-if="!store.userprofile"
             class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
             href="/auth"
           >
@@ -49,6 +51,14 @@
             <i class="text-gray-400 w-5 fa fa-user"></i>
             <span class="hidden lg:inline ml-1">Admin</span>
           </a>
+          <button
+            v-if="store.userprofile"
+            @click="logout"
+            class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
+          >
+            <i class="text-gray-400 w-5 fa fa-user"></i>
+            <span class="hidden lg:inline ml-1">logout</span>
+          </button>
         </div>
         <!-- Actions .//end -->
 
@@ -71,7 +81,33 @@
 </template>
 
 <script>
-export default {};
+import { appwrite } from "../utils";
+import { store } from "../store";
+export default {
+  data() {
+    return {
+      store,
+    };
+  },
+  mounted() {
+    this.checkLogin();
+  },
+  methods: {
+    async checkLogin() {
+      try {
+        const response = await appwrite.account.get();
+        store.userprofile = response;
+      } catch (err) {
+        if (err == "Error: Unauthorized") return;
+      }
+    },
+    async logout() {
+      store.userprofile = false;
+      appwrite.account.deleteSession("current");
+      this.$router.push("/");
+    },
+  },
+};
 </script>
 
 <style></style>

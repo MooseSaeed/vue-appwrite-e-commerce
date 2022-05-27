@@ -60,6 +60,27 @@
 <script>
 export default {
   name: "Login",
+  data: () => {
+    return {
+      email: "",
+      password: "",
+      error: false,
+    };
+  },
+  methods: {
+    async processLogin(e) {
+      e.preventDefault();
+      this.error = false;
+      // Validation
+      if (!(this.password.length >= 6 && this.password.length <= 32)) {
+        this.error = "Error: Password must be between 6 and 32 characters.";
+        return;
+      }
+      if ((await this.$parent.login()) === false) {
+        this.error = "Incorrect Credentials!";
+      }
+    },
+  },
 };
 </script>
 
